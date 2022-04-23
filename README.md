@@ -8,13 +8,13 @@ Art gallery
 <a href="https://laravel.com/docs/9.x/sail">Laravel Sail</a> + <a href="https://vitejs.dev/">Vite</a> + <a href="https://tailwindcss.com/">Tailwind</a>
 </h4>
 
-## Requirements
+# Requirements
 
 To run this project in your local machine you will need to install [Docker Desktop](https://www.docker.com/products/docker-desktop) and [Docker Compose](https://docs.docker.com/compose/install/).
 
-### How to install the project
+## How to install the project
 
-```bash
+```zsh
 $ git clone https://github.com/Kidoncio/art-gallery
 $ cd art-gallery
 $ docker run --rm \
@@ -23,13 +23,17 @@ $ docker run --rm \
     -w /var/www/html \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
-$ ./vendor/sail up -d
-$ ./vendor/sail npm install
+$ cp .env.example .env
+$ ./vendor/bin/sail up -d
+$ ./vendor/bin/sail php artisan key:generate
+$ ./vendor/bin/sail npm install
 ```
 
-### How to run
+## How to run
 
-```bash
-$ ./vendor/sail php artisan serve
-$ ./vendor/sail npm run dev
+```zsh
+$ ./vendor/bin/sail php artisan serve
+$ ./vendor/bin/sail npm run dev
 ```
+
+After that your server will be running at `http://localhost/`
