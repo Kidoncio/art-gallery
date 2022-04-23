@@ -24,8 +24,8 @@ $ docker run --rm \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
 $ cp .env.example .env
-$ ./vendor/bin/sail php artisan key:generate
 $ ./vendor/bin/sail up -d
+$ ./vendor/bin/sail php artisan key:generate
 $ ./vendor/bin/sail npm install
 ```
 
