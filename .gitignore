@@ -6,6 +6,7 @@
 !vendor/
 vendor/*
 !vendor/bin/
+!vendor/laravel/
 vendor/rubbish/*
 .env
 .env.backup
