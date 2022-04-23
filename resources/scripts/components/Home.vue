@@ -71,7 +71,7 @@ const currentPage: Ref<number> = reactive(ref(1));
 const totalPages: Ref<number> = reactive(ref(0));
 const artworks: Ref<Artwork[]> = reactive(ref([]));
 const loading: Ref<boolean> = reactive(ref(false));
-const defaultNumberOfResults: Ref<number> = ref(21);
+const defaultNumberOfResults: Ref<number> = ref(15);
 
 const getArtworks = async () => {
     loading.value = true;

@@ -12,7 +12,7 @@ const artworks = props.artworks || []
 
 <template>
     <div
-        :class="`grid-cols-${artworks.length === 1 ? 1 : 3} p-4 space-y-2 lg:space-y-0 lg:grid lg:gap-3 lg:grid-rows-${
+        :class="`grid-cols-3 p-4 space-y-2 lg:space-y-0 lg:grid lg:gap-3 lg:grid-rows-${
             artworks.length / 3
         } text-center`"
         v-if="artworks.length > 0"
