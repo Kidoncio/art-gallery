@@ -15,8 +15,14 @@ const components = import.meta.globEager('./components/*.vue');
 
 const vueApp = createApp();
 
+let initialLang = document.documentElement.lang?.replace('-', '_');
+
+if (initialLang !== 'pt' && initialLang !== 'pt_BR') {
+    initialLang = 'pt';
+}
+
 vueApp.use(i18nVue, {
-    lang: 'pt',
+    lang: initialLang,
     resolve: async (lang: string) => {
         const langs = import.meta.glob('../lang/*.json');
 
