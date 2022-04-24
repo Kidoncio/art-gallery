@@ -21,13 +21,16 @@ if (initialLang !== 'pt' && initialLang !== 'pt_BR') {
     initialLang = 'pt';
 }
 
+const initialLangLocale = import(`../lang/${initialLang}.json`);
+
 vueApp.use(i18nVue, {
     lang: initialLang,
-    resolve: async (lang: string) => {
-        const langs = import.meta.glob('../lang/*.json');
-
-        return await langs[`../lang/${lang}.json`]();
+    resolve: (lang: string) => {
+        return lang === initialLang
+            ? initialLangLocale
+            : import(`../lang/${lang}.json`);
     },
+    
 });
 
 Object.entries(components).forEach(([path, definition]) => {
